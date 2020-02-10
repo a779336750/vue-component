@@ -1,0 +1,83 @@
+@mixin select-item($size-class, $item-class) {
+    .#{$item-class} {
+        margin: 0;
+        line-height: 22px;
+        height: 32px;
+        padding: 5px 13px;
+        clear: both;
+        color:$text-color;
+        font-size: 14px;
+        white-space: nowrap;
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        transition: background $transition-time $ease-in-out;
+
+        .icon:first-child {
+            width: 16px;
+            height: 16px;
+            margin-right: 13px;
+        }
+
+        &:hover{
+            background: $background-color-select-hover;
+            color:$theme-color;
+            .icon {
+                fill:$theme-color;
+                vertical-align: middle;
+            }
+        }
+
+        &-focus {
+            background:$background-color-select-hover;
+        }
+
+        &-disabled {
+            color:$btn-disable-color;
+            cursor:$cursor-disabled;
+            .icon {
+                fill: $btn-disable-color;
+            }
+            &:hover {
+                .icon {
+                    fill: $btn-disable-color;
+                }
+                color:$btn-disable-color;
+                background-color: #fff;
+                cursor:$cursor-disabled;
+            }
+        }
+
+        &-selected ,&-selected:hover{
+            color:$primary-color;
+            //background:$selected-color;
+        }
+
+        &-selected, &-focus {
+            //background: shade(@selected-color, 10%);
+        }
+
+        &-divided{
+            margin-top: 12px;
+            position: relative;
+            &:before{
+                position: absolute;
+                width: calc(100% - 32px);
+                border-top: 1px solid $border-color-split;
+                content: '';
+                display: block;
+                background-color: #fff;
+                top: -6px;
+                left: 16px;
+            }
+        }
+    }
+
+    .#{$size-class}-large .#{$item-class} {
+        padding: 7px 16px 8px;
+        font-size:$font-size-base !important;
+    }
+
+}

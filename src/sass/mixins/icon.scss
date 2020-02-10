@@ -1,0 +1,17 @@
+@mixin icon-color($color) {
+    .svg-icon {
+        fill:$color
+    }
+}
+
+@mixin icon-size($size) {
+    .icon {
+        width: $size;
+        height: $size;
+
+        .svg-icon {
+            width : $size;
+            height: $size;
+        }
+    }
+}
