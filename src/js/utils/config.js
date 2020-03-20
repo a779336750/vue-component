@@ -16,5 +16,9 @@ Ktu.config = {
             name: '标签页 Tabs',
             key: 'Tabs'
         },
+        {
+            name: '开关 Switch',
+            key: 'ISwitch'
+        },
     ]
 }
